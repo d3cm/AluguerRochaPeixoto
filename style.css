@@ -1,0 +1,355 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Permite crescimento acima da altura da janela */
+    margin: 0;
+}
+
+/* Cabeçalho (Header) */
+
+header {
+    background: #2a2a2a;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px;
+    position: relative;
+}
+
+header img {
+    height: 50px;
+    margin-right: 10px;
+}
+
+header h1 {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.h1-middle{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Outer rectangle ajustado */
+.outer-rectangle {
+    width: 90%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2a2a2a;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+    margin: 0 auto; /* Garante centralização horizontal */
+}
+
+/* Container dos Retângulos */
+.rectangles-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 colunas */
+    gap: 20px; /* Espaçamento entre os retângulos internos */
+    width: 100%;
+}
+
+/* Estilo dos Retângulos Internos */
+.rectangle {
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden; /* Para evitar que conteúdos transbordem */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+    padding: 15px;
+}
+
+.rectangle:hover {
+    transform: scale(1.03); /* Amplia ligeiramente ao passar o mouse */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Título */
+.rectangle h2 {
+    font-size: 1.5rem;
+    color: #333333;
+    margin-bottom: 10px;
+}
+
+/* Imagem */
+.rectangle img {
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+/* Descrição */
+.rectangle p {
+    font-size: 1rem;
+    color: #666666;
+    margin-bottom: 15px;
+    flex-grow: 1; /* Faz o texto preencher o espaço restante */
+}
+
+/* Botão */
+.rectangle button {
+    background-color: #0056b3;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.rectangle button:hover {
+    background-color: #003d80;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .rectangles-container {
+        grid-template-columns: 1fr; /* Uma única coluna para dispositivos menores */
+    }
+}
+
+/* Navbar */
+
+nav {
+    background: rgba(55, 55, 55, 0.58);
+    display: flex;
+    justify-content: center;
+    padding: 15px 0;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav li {
+    margin: 0 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+main {
+    display: flex;
+    flex-direction: column; /* Coloca os elementos em uma coluna */
+    align-items: center; /* Centraliza os elementos horizontalmente */
+    gap: 20px; /* Espaçamento vertical entre os containers */
+    padding: 20px 0; /* Espaçamento interno (topo e fundo) */
+}
+
+
+/* Responsividade */
+
+@media only screen and (max-width: 564px) {
+    main {
+        padding: 1.5em;
+    }
+}
+
+
+/* Animação */
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Form Containers */
+.form-container {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    width: 45%; /* Tamanho para desktop */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+input[type="date"],
+input[type="time"],
+button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button.btn-submit {
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button.btn-submit:hover {
+    background-color: #0056b3;
+}
+
+/* Títulos */
+.form-container h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* Campos de entrada */
+.form-container input[type="text"],
+.form-container input[type="password"],
+.form-container input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+/* Botões */
+.form-container button {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color: #0056b3;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form-container button:hover {
+    background-color: #003d80;
+}
+
+/* Links */
+.form-container a {
+    color: #0056b3;
+    text-decoration: none;
+    display: block;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.form-container a:hover {
+    text-decoration: underline;
+}
+
+.icon.blinking {
+    animation: blink 1s infinite;
+}
+
+.login-button {
+    background-color: #0056b3; /* Cor de fundo principal */
+    color: #ffffff; /* Cor do texto */
+    text-decoration: none; /* Remove sublinhado (se for link) */
+    border: none; /* Remove borda */
+    border-radius: 5px; /* Bordas arredondadas */
+    padding: 10px 20px; /* Espaçamento interno */
+    font-size: 1rem; /* Tamanho da fonte */
+    font-weight: bold; /* Texto em negrito */
+    text-align: center; /* Centraliza o texto */
+    display: inline-block; /* Garante que funcione bem em layouts inline */
+    cursor: pointer; /* Indica que é clicável */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Suaviza mudanças */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
+}
+
+.login-button:hover {
+    background-color: #003d80; /* Cor ao passar o mouse */
+    transform: scale(1.05); /* Aumenta ligeiramente o botão */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* Aumenta a sombra */
+}
+
+.login-button:active {
+    transform: scale(0.95); /* Diminui ligeiramente quando pressionado */
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3); /* Sombra menor ao pressionar */
+}
+
+/* Rodapé (Footer) */
+footer {
+    width: 100%;
+    height: 60px; /* Aumentado para melhor legibilidade */
+    padding: 10px 20px; /* Adicionado espaçamento lateral */
+    background: rgba(255, 255, 255, 0.8); /* Transparência mais elegante */
+    color: #333; /* Melhor contraste para acessibilidade */
+    text-align: center;
+    backdrop-filter: blur(8px); /* Blur mais pronunciado */
+    position: fixed;
+    bottom: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1); /* Ajustado para um contraste mais sutil */
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1); /* Sombra para maior destaque */
+    z-index: 1000; /* Garante que o footer fique acima de outros elementos */
+    transition: opacity 0.4s ease, transform 0.4s ease; /* Suavidade nas transições */
+}
+
+footer:hover {
+    opacity: 0.9; /* Leve efeito ao passar o mouse */
+    transform: translateY(-2px); /* Efeito de elevação sutil */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    footer {
+        height: 50px; /* Reduz a altura em telas menores */
+        font-size: 14px; /* Ajusta o tamanho do texto */
+    }
+}
+
+.main {
+    margin-left: 160px; /* Igual à largura da sidenav */
+    font-size: 28px; /* Aumenta o texto para facilitar a rolagem */
+    padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+    .sidenav a {
+        font-size: 18px;
+    }
+}
